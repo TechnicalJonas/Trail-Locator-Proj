@@ -2,8 +2,8 @@
 let map;
 
 async function initMap() {
-  // The location of Schaumburg Library
-  const position = { lat: 42.02565677912509, lng: -88.08329041658169};
+  // The location of Uluru
+  const position = { lat: -25.344, lng: 131.031 };
   // Request needed libraries.
   //@ts-ignore
   const { Map } = await google.maps.importLibrary("maps");
@@ -11,16 +11,16 @@ async function initMap() {
 
   // The map, centered at Uluru
   map = new Map(document.getElementById("map"), {
-    zoom: 4,
+    zoom: 15,
     center: position,
-    mapId: "DEMO_MAP_ID",
+    mapId: "b003ec40387a4e50",
   });
 
   // The marker, positioned at Uluru
   const marker = new AdvancedMarkerElement({
     map: map,
     position: position,
-    title: "Schaumburg Library",
+    title: "Uluru",
   });
 }
 
