@@ -2,6 +2,9 @@
 let map;
 
 async function initMap() {
+
+  //getting current location:
+  
   // The location of Uluru
   const position = { lat: -25.344, lng: 131.031 };
   // Request needed libraries.
@@ -22,6 +25,20 @@ async function initMap() {
     position: position,
     title: "Uluru",
   });
+}
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    alert("Geolocation is not supported by this browser.");
+  }
+}
+
+function showPosition(position) {
+  var lat = position.coords.latitude;
+  var lng = position.coords.longitude;
+  map.setCenter(new google.maps.LatLng(lat, lng));
 }
 
 initMap();
