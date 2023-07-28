@@ -46,4 +46,4 @@ function showPosition(position) {
   })
 }
 
-initMap();
+// initMap();
