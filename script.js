@@ -1,8 +1,10 @@
 // Initialize and add the map
 let map;
-
+var geocoder = new google.maps.Geocoder();
 async function initMap() {
 
+  //getting current location:
+  
   // The location of Uluru
   const position = { lat: -25.344, lng: 131.031 };
   // Request needed libraries.
