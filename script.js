@@ -3,27 +3,28 @@ let map;
 
 async function initMap() {
 
-  // The location of Uluru
-  const position = { lat: -25.344, lng: 131.031 };
+  // The location of Google Building in Chicago
+  const position = { lat: 41.8874487635106, lng: -87.65265607333599 };
   // Request needed libraries.
   //@ts-ignore
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
-  getLocation();
-  // The map, centered at Uluru
+  
+  // The map, centered at Google chicago
   map = new Map(document.getElementById("map"), {
     zoom: 15,
     center: position,
     mapId: "b003ec40387a4e50",
   });
 
-  // The marker, positioned at Uluru
+  // The marker, positioned at Google Chicago
   const marker = new AdvancedMarkerElement({
     map: map,
     position: position,
-    title: "Uluru",
+    title: "Google Chicago",
   });
+  getLocation();
 }
 
 function getLocation() {
@@ -39,9 +40,10 @@ function showPosition(position) {
   var lng = position.coords.longitude;
   var pos = new google.maps.LatLng(lat, lng)
   map.setCenter(pos);
+  alert(pos)
   let marker = new google.maps.Marker({
     position: pos,
-    map: map,
+    map,
     title: "current position"
   })
 }
