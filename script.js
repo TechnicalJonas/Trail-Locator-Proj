@@ -1,10 +1,10 @@
 // Initialize and add the map
 let map;
-
+var geocoder = new google.maps.Geocoder();
 async function initMap() {
 
-  // The location of Google Building in Chicago
-  const position = { lat: 41.8874487635106, lng: -87.65265607333599 };
+  // The location of Uluru
+  const position = { lat: -25.344, lng: 131.031 };
   // Request needed libraries.
   //@ts-ignore
   const { Map } = await google.maps.importLibrary("maps");
